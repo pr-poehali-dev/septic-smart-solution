@@ -2,7 +2,8 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, Award, CheckCircle, Home, Shield, Truck } from "lucide-react";
+import { ArrowRight, Award, CheckCircle, Gift, Home, MessageSquare, Shield, ThumbsUp, Truck } from "lucide-react";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 const HomePage: React.FC = () => {
   return (
@@ -14,8 +15,11 @@ const HomePage: React.FC = () => {
             <h1 className="text-2xl font-bold text-slate-800">Септикон</h1>
           </div>
           <div className="hidden md:flex gap-6">
-            <a href="#services" className="text-slate-700 hover:text-blue-600">Услуги</a>
-            <a href="#advantages" className="text-slate-700 hover:text-blue-600">Преимущества</a>
+            <a href="#problems" className="text-slate-700 hover:text-blue-600">Проблемы</a>
+            <a href="#about" className="text-slate-700 hover:text-blue-600">О нас</a>
+            <a href="#comparison" className="text-slate-700 hover:text-blue-600">Сравнение</a>
+            <a href="#solutions" className="text-slate-700 hover:text-blue-600">Решения</a>
+            <a href="#reviews" className="text-slate-700 hover:text-blue-600">Отзывы</a>
             <a href="#contact" className="text-slate-700 hover:text-blue-600">Контакты</a>
           </div>
           <div>
@@ -44,71 +48,152 @@ const HomePage: React.FC = () => {
               </Button>
             </div>
           </div>
+        </div>
+      </section>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Shield className="h-6 w-6 text-blue-600" />
-                  Официальный дилер
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p>Работаем напрямую с заводами-производителями, предоставляем официальную гарантию на оборудование и монтажные работы</p>
+      {/* Знакомо? Секция */}
+      <section id="problems" className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-10 text-slate-800">Знакомо?</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <Card className="border-0 shadow-md hover:shadow-lg transition-shadow">
+              <CardContent className="pt-6">
+                <div className="text-4xl mb-4">💩</div>
+                <h3 className="text-xl font-semibold mb-2">Запахи на участке?</h3>
+                <p className="text-slate-600">Неприятный запах, который портит отдых и настроение</p>
               </CardContent>
             </Card>
-
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Truck className="h-6 w-6 text-blue-600" />
-                  Комплексный подход
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p>От консультации и подбора оптимального септика до монтажа и обслуживания – полный цикл работ в одних руках</p>
+            
+            <Card className="border-0 shadow-md hover:shadow-lg transition-shadow">
+              <CardContent className="pt-6">
+                <div className="text-4xl mb-4">🧊</div>
+                <h3 className="text-xl font-semibold mb-2">Замёрзла труба зимой?</h3>
+                <p className="text-slate-600">Аварии и поломки в самое неподходящее время</p>
               </CardContent>
             </Card>
-
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Award className="h-6 w-6 text-blue-600" />
-                  Профессионализм
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p>Опытные инженеры и монтажники с многолетним стажем обеспечат качественную установку любой сложности</p>
+            
+            <Card className="border-0 shadow-md hover:shadow-lg transition-shadow">
+              <CardContent className="pt-6">
+                <div className="text-4xl mb-4">💸</div>
+                <h3 className="text-xl font-semibold mb-2">Ассенизатор раз в 2 недели?</h3>
+                <p className="text-slate-600">Постоянные расходы и зависимость от графика откачки</p>
               </CardContent>
             </Card>
+            
+            <Card className="border-0 shadow-md hover:shadow-lg transition-shadow">
+              <CardContent className="pt-6">
+                <div className="text-4xl mb-4">👮‍♂️</div>
+                <h3 className="text-xl font-semibold mb-2">Штраф за незаконный слив?</h3>
+                <p className="text-slate-600">Проблемы с законом и экологией из-за неправильной системы</p>
+              </CardContent>
+            </Card>
+          </div>
+          
+          <div className="max-w-3xl mx-auto text-center bg-blue-50 p-8 rounded-lg">
+            <h3 className="text-2xl font-bold mb-4 text-slate-800">Хватит это терпеть!</h3>
+            <p className="text-lg text-slate-700 mb-0">
+              Есть решение, которое работает раз и навсегда. И вы не слышали о нём — потому что мы не кричим, а просто делаем.
+            </p>
           </div>
         </div>
       </section>
 
-      <section id="services" className="py-16 bg-white">
+      {/* Кто мы такие */}
+      <section id="about" className="py-16 bg-slate-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-slate-800">Наши услуги</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="flex flex-col md:flex-row gap-10 items-center">
+            <div className="md:w-1/2">
+              <div className="text-4xl mb-4">🧠</div>
+              <h2 className="text-3xl font-bold mb-6 text-slate-800">Кто мы такие</h2>
+              <p className="text-xl text-slate-600 mb-6">
+                Компания "Септикон" — это не просто «установка септика». Это способ вычеркнуть канализацию из жизни. Навсегда. Без запахов. Без беготни. Без паники зимой. С гарантией и сервисом.
+              </p>
+              <Button className="bg-blue-600 hover:bg-blue-700">
+                Узнать больше о нас
+              </Button>
+            </div>
+            <div className="md:w-1/2">
+              <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Shield className="h-6 w-6 text-blue-600" />
+                    Официальный дилер
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p>Работаем напрямую с заводами-производителями, предоставляем официальную гарантию на оборудование и монтажные работы</p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Почему нас выбирают */}
+      <section id="comparison" className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <div className="text-4xl mb-4">🎯</div>
+            <h2 className="text-3xl font-bold text-slate-800 mb-6">Почему нас выбирают</h2>
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead className="w-1/3">Критерий</TableHead>
+                  <TableHead className="w-1/3 text-blue-600">"Септикон"</TableHead>
+                  <TableHead className="w-1/3">Обычные установщики</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                <TableRow>
+                  <TableCell className="font-medium">Морозоустойчивость</TableCell>
+                  <TableCell className="bg-blue-50">Да, до -35°</TableCell>
+                  <TableCell>Неизвестно</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium">Документы для узаконивания</TableCell>
+                  <TableCell className="bg-blue-50">Включены</TableCell>
+                  <TableCell>Часто нет</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium">Общение</TableCell>
+                  <TableCell className="bg-blue-50">Простое, по-человечески</TableCell>
+                  <TableCell>Сухо и по-строительному</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium">Сервис</TableCell>
+                  <TableCell className="bg-blue-50">24/7 даже после установки</TableCell>
+                  <TableCell>«Позвоните, если что»</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium">Цена</TableCell>
+                  <TableCell className="bg-blue-50">Фиксированная, честная</TableCell>
+                  <TableCell>Сюрпризы после подписания</TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+          </div>
+        </div>
+      </section>
+
+      {/* Решения под ваши задачи */}
+      <section id="solutions" className="py-16 bg-slate-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <div className="text-4xl mb-4">🏠</div>
+            <h2 className="text-3xl font-bold text-slate-800 mb-6">Решения под ваши задачи</h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <Card className="border border-slate-200">
               <CardHeader>
-                <CardTitle>Подбор автономной канализации</CardTitle>
-                <CardDescription>Индивидуальный расчет под ваши потребности</CardDescription>
+                <CardTitle>Живёте за городом</CardTitle>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span>Бесплатный выезд инженера на объект</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span>Расчет оптимальной производительности</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span>Подбор модели с учетом особенностей участка</span>
-                  </li>
-                </ul>
+                <p>Система, которая работает даже в снег и в -30. Документы включены.</p>
               </CardContent>
               <CardFooter>
                 <Button variant="outline" className="w-full">Подробнее <ArrowRight className="ml-2 h-4 w-4" /></Button>
@@ -117,24 +202,46 @@ const HomePage: React.FC = () => {
 
             <Card className="border border-slate-200">
               <CardHeader>
-                <CardTitle>Установка септиков "под ключ"</CardTitle>
-                <CardDescription>От земляных работ до подключения</CardDescription>
+                <CardTitle>Приезжаете летом</CardTitle>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span>Земляные работы и подготовка котлована</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span>Монтаж септика и прокладка коммуникаций</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span>Пусконаладочные работы и ввод в эксплуатацию</span>
-                  </li>
-                </ul>
+                <p>Включили весной — забыли до осени. Без запаха и откачек.</p>
+              </CardContent>
+              <CardFooter>
+                <Button variant="outline" className="w-full">Подробнее <ArrowRight className="ml-2 h-4 w-4" /></Button>
+              </CardFooter>
+            </Card>
+
+            <Card className="border border-slate-200">
+              <CardHeader>
+                <CardTitle>Строите дом</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p>Всё официально, под ключ, чтобы заехать спокойно.</p>
+              </CardContent>
+              <CardFooter>
+                <Button variant="outline" className="w-full">Подробнее <ArrowRight className="ml-2 h-4 w-4" /></Button>
+              </CardFooter>
+            </Card>
+
+            <Card className="border border-slate-200">
+              <CardHeader>
+                <CardTitle>Сдаёте дом</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p>Арендаторы довольны, не звонят, не жалуются.</p>
+              </CardContent>
+              <CardFooter>
+                <Button variant="outline" className="w-full">Подробнее <ArrowRight className="ml-2 h-4 w-4" /></Button>
+              </CardFooter>
+            </Card>
+
+            <Card className="border border-slate-200">
+              <CardHeader>
+                <CardTitle>Думаете об экологии</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p>Био-септики с сертификацией, без «зелёного обмана».</p>
               </CardContent>
               <CardFooter>
                 <Button variant="outline" className="w-full">Подробнее <ArrowRight className="ml-2 h-4 w-4" /></Button>
@@ -144,51 +251,104 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
-      <section id="advantages" className="py-16 bg-slate-50">
+      {/* Отзывы клиентов */}
+      <section id="reviews" className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-slate-800">Почему выбирают «Септикон»</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
-                  <Home className="h-6 w-6 text-blue-600" />
+          <div className="text-center mb-12">
+            <div className="text-4xl mb-4">👥</div>
+            <h2 className="text-3xl font-bold text-slate-800 mb-6">Что говорят клиенты</h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <Card className="border-0 shadow-md hover:shadow-lg transition-shadow">
+              <CardContent className="pt-8">
+                <div className="flex items-start mb-4">
+                  <MessageSquare className="h-10 w-10 text-blue-600 mr-4 flex-shrink-0" />
+                  <p className="text-lg italic">"Три зимы подряд — ни одного сбоя. Ни запаха. Спасибо вам!"</p>
                 </div>
-                <h3 className="text-xl font-semibold">Опыт более 10 лет</h3>
-              </div>
-              <p className="text-slate-600">Тысячи успешно реализованных проектов любой сложности в Москве и области</p>
-            </div>
+                <div className="flex items-center">
+                  <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                    <span className="font-semibold text-blue-600">АМ</span>
+                  </div>
+                  <div>
+                    <p className="font-semibold">Алексей Михайлов</p>
+                    <p className="text-sm text-slate-500">Истринский район</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
             
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
-                  <Shield className="h-6 w-6 text-blue-600" />
+            <Card className="border-0 shadow-md hover:shadow-lg transition-shadow">
+              <CardContent className="pt-8">
+                <div className="flex items-start mb-4">
+                  <MessageSquare className="h-10 w-10 text-blue-600 mr-4 flex-shrink-0" />
+                  <p className="text-lg italic">"Ставили соседу дешевле — он уже выкапывает. Я доволен, что выбрал «Септикон»"</p>
                 </div>
-                <h3 className="text-xl font-semibold">Официальная гарантия</h3>
-              </div>
-              <p className="text-slate-600">До 5 лет на оборудование и до 1 года на все монтажные работы</p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
-                  <Truck className="h-6 w-6 text-blue-600" />
+                <div className="flex items-center">
+                  <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                    <span className="font-semibold text-blue-600">ИК</span>
+                  </div>
+                  <div>
+                    <p className="font-semibold">Игорь Кузнецов</p>
+                    <p className="text-sm text-slate-500">Дмитровский район</p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold">Фиксированные цены</h3>
-              </div>
-              <p className="text-slate-600">Стоимость в договоре не меняется. Никаких скрытых доплат и сюрпризов</p>
-            </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
+      {/* Подарок за заявку */}
+      <section className="py-16 bg-blue-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-10">
+            <div className="text-4xl mb-4">🎁</div>
+            <h2 className="text-3xl font-bold text-slate-800 mb-6">Подарок за заявку</h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <Card className="border-0 shadow-md hover:shadow-lg transition-shadow">
+              <CardContent className="pt-6">
+                <div className="text-3xl mb-4">💡</div>
+                <h3 className="text-xl font-semibold mb-2">Бесплатный подбор септика</h3>
+                <p className="text-slate-600">Индивидуальный расчет по вашему участку и потребностям</p>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-0 shadow-md hover:shadow-lg transition-shadow">
+              <CardContent className="pt-6">
+                <div className="text-3xl mb-4">📘</div>
+                <h3 className="text-xl font-semibold mb-2">Инструкция по уходу</h3>
+                <p className="text-slate-600">"Как ухаживать за септиком и не париться"</p>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-0 shadow-md hover:shadow-lg transition-shadow">
+              <CardContent className="pt-6">
+                <div className="text-3xl mb-4">🛠</div>
+                <h3 className="text-xl font-semibold mb-2">12 месяцев техподдержки</h3>
+                <p className="text-slate-600">Помощь специалистов в любое время дня и ночи</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Оставьте заявку */}
       <section id="contact" className="py-16 bg-blue-600 text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">Получите бесплатную консультацию</h2>
-            <p className="text-xl mb-8">Оставьте заявку, и наш специалист свяжется с вами в ближайшее время для расчета стоимости и подбора оптимального решения</p>
+            <div className="text-4xl mb-4">📞</div>
+            <h2 className="text-3xl font-bold mb-6">Оставьте заявку — и забудьте о канализации</h2>
+            <p className="text-xl mb-4">1 минута на заявку — комфорт на годы.</p>
+            <p className="text-xl mb-8">Заполните форму — и мы вам подберём решение без головной боли.</p>
             <Button className="bg-white text-blue-600 hover:bg-blue-50 text-lg px-8 py-6">
               Оставить заявку
             </Button>
+            <p className="mt-8 text-lg font-light">
+              «Септикон» — это не о трубах. Это о людях, которые не хотят больше думать о канализации. Мы ставим так, как ставили бы себе.
+            </p>
           </div>
         </div>
       </section>
