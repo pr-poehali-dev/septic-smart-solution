@@ -6,13 +6,13 @@ import { Award, BadgeCheck, Shield, Truck } from "lucide-react";
 
 const Comparison: React.FC = () => {
   const comparisonData = [
-    { criterion: "Морозоустойчивость", septikon: "Да, до -35°", others: "Неизвестно" },
-    { criterion: "Документы для узаконивания", septikon: "Включены", others: "Часто нет" },
-    { criterion: "Общение", septikon: "Простое, по-человечески", others: "Сухо и по-строительному" },
-    { criterion: "Сервис", septikon: "24/7 даже после установки", others: "«Позвоните, если что»" },
-    { criterion: "Цена", septikon: "Фиксированная, честная", others: "Сюрпризы после подписания" },
-    { criterion: "Работа зимой", septikon: "Круглый год, в любую погоду", others: "Часто только в теплое время" },
-    { criterion: "Гарантия", septikon: "До 5 лет на все работы", others: "Минимальная или отсутствует" }
+    { criterion: "Морозоустойчивость", septic: "Да, до -35°", others: "Неизвестно" },
+    { criterion: "Документы для узаконивания", septic: "Включены", others: "Часто нет" },
+    { criterion: "Общение", septic: "Простое, по-человечески", others: "Сухо и по-строительному" },
+    { criterion: "Сервис", septic: "24/7 даже после установки", others: "«Позвоните, если что»" },
+    { criterion: "Цена", septic: "Фиксированная, честная", others: "Сюрпризы после подписания" },
+    { criterion: "Работа зимой", septic: "Круглый год, в любую погоду", others: "Часто только в теплое время" },
+    { criterion: "Гарантия", septic: "До 5 лет на все работы", others: "Минимальная или отсутствует" }
   ];
 
   const advantages = [
@@ -67,7 +67,7 @@ const Comparison: React.FC = () => {
                 {comparisonData.map((row, index) => (
                   <TableRow key={index}>
                     <TableCell className="font-medium">{row.criterion}</TableCell>
-                    <TableCell className="bg-blue-50">{row.septikon}</TableCell>
+                    <TableCell className="bg-blue-50">{row.septic}</TableCell>
                     <TableCell>{row.others}</TableCell>
                   </TableRow>
                 ))}

@@ -2,7 +2,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { BarChart, Heart, Leaf, Power, Star, ThumbsUp } from "lucide-react";
+import { BarChart, Heart, Leaf, Zap, Star, ThumbsUp } from "lucide-react";
 
 const SepticTypes: React.FC = () => {
   const typesData = {
@@ -101,7 +101,7 @@ const SepticTypes: React.FC = () => {
         <Tabs defaultValue="energy-dependent" className="max-w-5xl mx-auto">
           <TabsList className="grid grid-cols-2 mb-8 w-full md:w-2/3 mx-auto">
             <TabsTrigger value="energy-dependent" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white">
-              <Power className="h-4 w-4 mr-2" />
+              <Zap className="h-4 w-4 mr-2" />
               Энергозависимые
             </TabsTrigger>
             <TabsTrigger value="energy-independent" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white">

@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle, Package, Settings, Tools } from "lucide-react";
+import { CheckCircle, Package, Settings, Wrench } from "lucide-react";
 
 const Services: React.FC = () => {
   const services = [
@@ -17,7 +17,7 @@ const Services: React.FC = () => {
       image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
     },
     {
-      icon: <Tools className="h-5 w-5 text-blue-600" />,
+      icon: <Wrench className="h-5 w-5 text-blue-600" />,
       title: "Профессиональная установка",
       description: "Монтаж септиков и систем очистки \"под ключ\":",
       features: [

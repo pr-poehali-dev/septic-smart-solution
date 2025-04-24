@@ -25,7 +25,7 @@ const Header: React.FC = () => {
         <div className="hidden md:flex gap-6">
           {navLinks.map((link, index) => (
             <a 
-              key={index}
+              key={index} 
               href={link.href} 
               className="text-slate-700 hover:text-blue-600"
             >
